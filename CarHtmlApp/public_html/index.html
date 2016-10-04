@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="carApp">
+    <head>
+        <title>AngularJS 1.x tests</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" 
+              content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+        <script src="bower_components/angular/angular.js"></script>
+        <link rel="stylesheet" href="index.css" type="text/css" />
+        <script src="index.js"></script>
+    </head>
+    <body ng-controller="CarListController">
+        <h2>{{hello}}, here are our {{cars.length}} offers:</h2>
+
+        <ul>
+            <li ng-repeat="car in cars">
+                <span class="name">{{car.name}}</span>
+                <p class="desc">{{car.snippet}}</p>
+            </li>
+        </ul>
+
+    </body>
+</html>
