@@ -22,5 +22,17 @@
             </li>
         </ul>
 
+        <div ng-init="year = 2016;count = 2">
+            <div>
+                Year: <input type="number" min="0" ng-model="year" />
+            </div>
+            <div>
+                Count: <input type="number" min="0" ng-model="count" />
+            </div>
+            <div>
+                <b>You want {{count}} car(s) from {{year}}?</b>
+            </div>
+        </div>
+
     </body>
 </html>
