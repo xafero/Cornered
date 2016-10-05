@@ -1,7 +1,17 @@
 
-var carApp = angular.module('carApp', []);
+var utils = angular.module('utils.service', []);
 
-carApp.controller('CarListController', function CarListController($scope) {
+utils.factory('StringUtils', function StringUtils() {
+    return {
+        removeSpaces: function (value) {
+            return value.replace(new RegExp('\\s', 'g'), '');
+        }
+    };
+});
+
+var carApp = angular.module('carApp', ['utils.service']);
+
+carApp.controller('CarListController', function CarListController($scope, StringUtils) {
     $scope.hello = 'Greetings';
     $scope.cars = [
         {
@@ -20,5 +30,8 @@ carApp.controller('CarListController', function CarListController($scope) {
     this.doReset = function () {
         this.year = 2016;
         this.count = 1;
+        alert('Your values have been ' +
+                StringUtils.removeSpaces('r e s e t t e d')
+                + '!');
     };
 });
