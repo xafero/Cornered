@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="index.css" type="text/css" />
         <script src="index.js"></script>
     </head>
-    <body ng-controller="CarListController">
+    <body ng-controller="CarListController as ctrl">
         <h2>{{hello}}, here are our {{cars.length}} offers:</h2>
 
         <ul>
@@ -22,15 +22,20 @@
             </li>
         </ul>
 
-        <div ng-init="year = 2016;count = 2">
+        <h2>Input your choice</h2>
+
+        <div ng-init="ctrl.year = 2016;ctrl.count = 2">
             <div>
-                Year: <input type="number" min="0" ng-model="year" />
+                Year: <input type="number" min="0" ng-model="ctrl.year" />
             </div>
             <div>
-                Count: <input type="number" min="0" ng-model="count" />
+                Count: <input type="number" min="0" ng-model="ctrl.count" />
             </div>
             <div>
-                <b>You want {{count}} car(s) from {{year}}?</b>
+                <b>You want {{ctrl.count}} car(s) from {{ctrl.year}}?</b>
+                <p>
+                    <button ng-click="ctrl.doReset()">Reset the form!</button>
+                </p>
             </div>
         </div>
 

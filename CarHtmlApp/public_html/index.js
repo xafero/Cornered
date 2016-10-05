@@ -17,4 +17,8 @@ carApp.controller('CarListController', function CarListController($scope) {
             snippet: "Shitty deadly car :-("
         }
     ];
+    this.doReset = function () {
+        this.year = 2016;
+        this.count = 1;
+    };
 });
