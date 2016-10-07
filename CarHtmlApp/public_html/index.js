@@ -15,8 +15,10 @@ carApp.config(function () {
    console.log("If you want to configure something beforehand, just do it here...");
 });
 
-carApp.run(function () {
-   console.log("This is some code for initialization.");
+carApp.value('term', 'anywhere');
+
+carApp.run(function (term) {
+   console.log("This is some "+term+" for initialization.");
 });
 
 carApp.controller('CarListController', function CarListController($scope, StringUtils) {
