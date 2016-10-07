@@ -11,6 +11,10 @@ utils.factory('StringUtils', function StringUtils() {
 
 var carApp = angular.module('carApp', ['utils.service']);
 
+carApp.config(function () {
+   console.log("If you want to configure something beforehand, just do it here...");
+});
+
 carApp.run(function () {
    console.log("This is some code for initialization.");
 });
