@@ -15,8 +15,9 @@
     <body ng-controller="CarListController as ctrl">
         <h2>{{hello}}, here are our {{cars.length}} offers:</h2>
 
+        <input type="text" ng-model="searchName" autofocus />
         <ul>
-            <li ng-repeat="car in cars">
+            <li ng-repeat="car in cars | filter: searchName">
                 <span class="name">#{{$index}} {{car.name}}</span>
                 <p class="desc">{{car.snippet | lowercase}}</p>
                 <p class="desc" ng-bind="car.weight" />
