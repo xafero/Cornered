@@ -16,9 +16,10 @@ carApp.config(function () {
 });
 
 carApp.value('term', 'anywhere');
+carApp.constant('sign', '!');
 
-carApp.run(function (term) {
-   console.log("This is some "+term+" for initialization.");
+carApp.run(function (term, sign) {
+   console.log("This is some "+term+" for initialization"+sign);
 });
 
 carApp.controller('CarListController', function CarListController($scope, StringUtils) {
