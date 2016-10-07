@@ -27,7 +27,8 @@ carApp.controller('CarListController', function CarListController($scope, String
     $scope.cars = [
         {
             name: "Porsche A2",
-            snippet: "Cool car for fun!"
+            snippet: "Cool car for fun!",
+            weight: "1"
         },
         {
             name: "Audi A8",
@@ -35,7 +36,8 @@ carApp.controller('CarListController', function CarListController($scope, String
         },
         {
             name: "VW Polo",
-            snippet: "Shitty deadly car :-("
+            snippet: "Shitty deadly car :-(",
+            weight: "3"
         }
     ];
     this.doReset = function () {
