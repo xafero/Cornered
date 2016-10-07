@@ -30,7 +30,8 @@
                 Year: <input type="number" min="0" ng-model="ctrl.year" />
             </div>
             <div>
-                Count: <input type="number" min="0" ng-model="ctrl.count" />
+                Count: <input type="number" min="0" ng-model="ctrl.count" 
+                              ng-model-options="{debounce: 1500}"/>
             </div>
             <div>
                 <b>You want {{ctrl.count}} car(s) from {{ctrl.year}}?</b>
