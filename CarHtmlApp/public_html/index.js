@@ -11,6 +11,10 @@ utils.factory('StringUtils', function StringUtils() {
 
 var carApp = angular.module('carApp', ['utils.service']);
 
+carApp.run(function () {
+   console.log("This is some code for initialization.");
+});
+
 carApp.controller('CarListController', function CarListController($scope, StringUtils) {
     $scope.hello = 'Greetings';
     $scope.cars = [
