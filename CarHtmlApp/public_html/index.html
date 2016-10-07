@@ -23,9 +23,10 @@
             </li>
         </ul>
 
+        <label><input type="checkbox" ng-model="shouldShow">Hide that inputs!</label>
         <h2>Input your choice</h2>
 
-        <div ng-init="ctrl.year = 2016;ctrl.count = 2">
+        <div ng-init="ctrl.year = 2016;ctrl.count = 2" ng-hide="shouldShow">
             <div>
                 Year: <input type="number" min="0" ng-model="ctrl.year" 
                              ng-cloak />
@@ -41,6 +42,6 @@
                 </p>
             </div>
         </div>
-
+        
     </body>
 </html>
