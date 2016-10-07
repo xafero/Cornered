@@ -11,8 +11,9 @@ utils.factory('StringUtils', function StringUtils() {
 
 var carApp = angular.module('carApp', ['utils.service']);
 
-carApp.config(function () {
+carApp.config(function ($compileProvider) {
    console.log("If you want to configure something beforehand, just do it here...");
+   $compileProvider.debugInfoEnabled(false);
 });
 
 carApp.value('term', 'anywhere');
