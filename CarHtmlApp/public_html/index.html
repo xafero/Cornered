@@ -18,7 +18,7 @@
         <ul>
             <li ng-repeat="car in cars">
                 <span class="name">#{{$index}} {{car.name}}</span>
-                <p class="desc">{{car.snippet}}</p>
+                <p class="desc">{{car.snippet | lowercase}}</p>
                 <p class="desc" ng-bind="car.weight" />
             </li>
         </ul>
