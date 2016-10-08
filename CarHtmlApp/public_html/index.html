@@ -18,7 +18,7 @@
         <input type="text" ng-model="searchName" autofocus />
         <ul>
             <li ng-repeat="car in cars | filter: searchName">
-                <span class="name">#{{$index}} {{car.name}}</span>
+                <span class="name">#{{$index}} {{car.name | junk: 15}}</span>
                 <p class="desc">{{car.snippet | lowercase}}</p>
                 <p class="desc" ng-bind="car.weight" />
             </li>

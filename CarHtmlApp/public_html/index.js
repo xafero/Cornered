@@ -9,18 +9,27 @@ utils.factory('StringUtils', function StringUtils() {
     };
 });
 
+utils.filter('junk', function () {
+    return function (input, length) {
+        var str = String(input);
+        while (str.length < length)
+            str += '_';
+        return str;
+    };
+});
+
 var carApp = angular.module('carApp', ['utils.service']);
 
 carApp.config(function ($compileProvider) {
-   console.log("If you want to configure something beforehand, just do it here...");
-   $compileProvider.debugInfoEnabled(false);
+    console.log("If you want to configure something beforehand, just do it here...");
+    $compileProvider.debugInfoEnabled(false);
 });
 
 carApp.value('term', 'anywhere');
 carApp.constant('sign', '!');
 
 carApp.run(function (term, sign) {
-   console.log("This is some "+term+" for initialization"+sign);
+    console.log("This is some " + term + " for initialization" + sign);
 });
 
 carApp.controller('CarListController', function CarListController($scope, StringUtils) {
